@@ -1,0 +1,8 @@
+.pading-10{
+    padding-right: 10px;
+}
+
+.user-details-form{
+    display: flex;
+    justify-content: space-between;
+}

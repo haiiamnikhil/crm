@@ -1,0 +1,21 @@
+<div [ngSwitch]="router.url">
+  <div class="layout-wrapper layout-content-navbar" *ngSwitchDefault>
+    <div class="layout-container">
+      <leftnav></leftnav>
+      <div class="layout-page">
+        <topnav></topnav>
+        <div class="content-wrapper">
+          <div class="container-fluid flex-grow-1 container-p-y">
+        <router-outlet></router-outlet>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-xxl" *ngSwitchCase="'/auth/register'">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="container-xxl" *ngSwitchCase="'/auth/login'">
+    <router-outlet></router-outlet>
+  </div>
+  
+</div>
