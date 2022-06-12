@@ -1,18 +1,23 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+from rest_framework import generics
+from rest_framework.response import Response
 
-from django.http import JsonResponse
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 from user_management.models import Users
 from user_management.serializer.user_serializer import ListUserSerializer
 
 
-class ListUsers(ListAPIView):
-    
-    def get(self, request):
-        users = self.get_userlist(request)
-        return JsonResponse({'data':users,'success':True}, safe=False, status=200)
+class ListUsers(generics.ListAPIView):
+    permission_classes = (IsAuthenticated,)
 
-    def get_userlist(self, request):
+    def get(self, request):
+        users = self.get_userlist()
+        return Response({'success': True,'data':users})
+
+    def get_userlist(self):
         users = Users.objects.all()
         userserialized = ListUserSerializer(users, many=True)
         return userserialized.data

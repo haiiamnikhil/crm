@@ -12,9 +12,8 @@ export class ListComponent implements OnInit {
   constructor(private service: UserService) { }
 
   ngOnInit(){
-    this.service.listUsers().subscribe(response => {
+    this.service.listUser().subscribe(response => {
       this.userList=response.data
-      console.log(response.data)
     }, err=>console.log(err))
   }
 

@@ -14,6 +14,8 @@ import { BottomnavComponent } from './main/common/bottomnav/bottomnav.component'
 import { TopnavComponent } from './main/common/topnav/topnav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './service/HRMS/user.service';
+import { AuthService } from './service/AUTH/auth.service';
+import { EditComponent } from './main/HRMS/user/edit/edit.component';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { UserService } from './service/HRMS/user.service';
     RegisterComponent,
     LeftnavComponent,
     BottomnavComponent,
-    TopnavComponent
+    TopnavComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,7 @@ import { UserService } from './service/HRMS/user.service';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserService],
+  providers: [UserService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

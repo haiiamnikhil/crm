@@ -9,13 +9,14 @@ import { UserService } from 'src/app/service/HRMS/user.service';
 })
 export class CreateComponent implements OnInit {
 
-  form:FormGroup;
-  isBusy:boolean;
+  form:any;
+  isBusy:any;
   imageSrc:any = '../assets/img/profile/default-profile.png';
   profileImage:any;
 
   constructor(private formBuilder: FormBuilder, private service:UserService) { 
-    
+    this.form = FormGroup;
+    this.isBusy = Boolean;
   }
 
   ngOnInit(){
@@ -67,7 +68,6 @@ export class CreateComponent implements OnInit {
     if (this.profileImage){
       formData.append('profile_image',this.profileImage, this.profileImage.name)
     }
-
     this.service.onboadUserDetails(formData).subscribe(response => console.log(response), err => console.log(err)
     )
   }

@@ -1,8 +1,9 @@
-from email.policy import default
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 
+
+DEFAULT_PROFILE_IMAGE = 'default/default-profile.png'
 
 class Users(AbstractUser):
     email = models.EmailField(_('email address'),unique=True)
@@ -18,8 +19,10 @@ class Users(AbstractUser):
     zipcode = models.CharField(max_length=100, unique=False, null=True, blank=True)
     country = models.CharField(max_length=100, unique=False, null=True, blank=True)
 
-    profile_image = models.ImageField(upload_to="img/user/profile-img", default="default/default-profile.png")
+    profile_image = models.ImageField(upload_to="img/user/profile-img", default=DEFAULT_PROFILE_IMAGE)
     designation = models.CharField(max_length=50, unique=False, null=True, blank=True)
+
+    onboarded_by = models.ForeignKey('self', on_delete=models.DO_NOTHING,null=True,blank=True,unique=False)
 
     class Meta:
         verbose_name_plural = 'Users'
