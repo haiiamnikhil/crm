@@ -16,6 +16,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './service/HRMS/user.service';
 import { AuthService } from './service/AUTH/auth.service';
 import { EditComponent } from './main/HRMS/user/edit/edit.component';
+import { AccountstatusComponent } from './main/HRMS/user/profile/accountstatus/accountstatus.component';
+import { EntitlementsService } from './service/AUTHO/entitlements.service';
+import { SettingsComponent } from './main/HRMS/user/profile/settings/settings.component';
+import { BasicdetailsComponent } from './main/HRMS/user/profile/basicdetails/basicdetails.component';
+import { EntitlementsComponent } from './main/HRMS/user/profile/settings/entitlements/entitlements.component';
+import { BasicsettingsComponent } from './main/HRMS/user/profile/settings/basicsettings/basicsettings.component';
+import { UserrolesComponent } from './main/HRMS/user/profile/settings/userroles/userroles.component';
+import { SecurityComponent } from './main/HRMS/user/profile/settings/security/security.component';
+import { GlobalentitlementsComponent } from './main/HRMS/user/globalentitlements/globalentitlements.component';
+import { ListdeletedusersComponent } from './main/HRMS/user/listdeletedusers/listdeletedusers.component';
 
 
 @NgModule({
@@ -29,7 +39,16 @@ import { EditComponent } from './main/HRMS/user/edit/edit.component';
     LeftnavComponent,
     BottomnavComponent,
     TopnavComponent,
-    EditComponent
+    EditComponent,
+    AccountstatusComponent,
+    SettingsComponent,
+    BasicdetailsComponent,
+    EntitlementsComponent,
+    BasicsettingsComponent,
+    UserrolesComponent,
+    SecurityComponent,
+    GlobalentitlementsComponent,
+    ListdeletedusersComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +57,7 @@ import { EditComponent } from './main/HRMS/user/edit/edit.component';
     FormsModule,
     HttpClientModule,
   ],
-  providers: [UserService, AuthService],
+  providers: [UserService, AuthService, EntitlementsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

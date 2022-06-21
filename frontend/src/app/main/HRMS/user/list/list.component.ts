@@ -2,19 +2,37 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/HRMS/user.service';
 
 @Component({
-  selector: 'app-list',
+  selector: 'list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
 
   userList:any;
-  constructor(private service: UserService) { }
+  uid:any
+
+  constructor(private service: UserService) {}
 
   ngOnInit(){
     this.service.listUser().subscribe(response => {
-      this.userList=response.data
+      if (response.success){
+        this.userList=response.data
+      }
     }, err=>console.log(err))
+  }
+
+  passUserUid(uid:string){
+    this.uid= uid
+  }
+
+  confirmDelete(){
+    let formData = new FormData();
+    formData.append('uid',this.uid)
+    this.service.deleteUser(formData).subscribe(response => {
+      if (response){
+        window.location.reload()
+      }
+    }, err => console.log(err))
   }
 
 }

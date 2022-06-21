@@ -11,12 +11,13 @@ import { UserService } from 'src/app/service/HRMS/user.service';
 export class TopnavComponent implements OnInit {
 
   userDetails:any
-  constructor(private service:AuthService, private router:Router, private _presentUser:UserService) { 
+  constructor(private service:AuthService, private router:Router, private presentUser:UserService) { 
   }
   
   ngOnInit(){
-    this._presentUser.user.subscribe(user => {
+    this.presentUser.user.subscribe(user => {
       this.userDetails = user
+      sessionStorage.setItem('user',JSON.stringify(this.userDetails))
     })
   }
 

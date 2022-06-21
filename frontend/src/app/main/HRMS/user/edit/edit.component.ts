@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/service/HRMS/user.service';
 
 @Component({
-  selector: 'app-edit',
+  selector: 'edit',
   templateUrl: './edit.component.html',
   styleUrls: ['./edit.component.css']
 })
@@ -14,7 +14,8 @@ export class EditComponent implements OnInit {
   isBusy: any
   imageSrc: any = '../assets/img/profile/default-profile.png';
   profileImage: any;
-  pk:any;
+  uid:any
+  userDesignations:any
 
   constructor(private service: UserService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute) {
     this.isBusy = Boolean
@@ -22,21 +23,27 @@ export class EditComponent implements OnInit {
   }
 
   ngOnInit() {
-    let user = this.route.snapshot.paramMap.get('uid')
-    this.service.fetchUserDetails(user).subscribe(response => {
+    this.uid = this.route.snapshot.paramMap.get('uid')
+    this.service.getUserRoles().subscribe(response => {
+      if (response.success){
+        this.userDesignations = response.role
+      }
+    })
+    this.service.fetchUserDetails(this.uid).subscribe(response => {
       if (response.success) {
         this.form.patchValue(response.user)
-        this.pk = response.user['pk']
         this.imageSrc = this.service.BASE_URL + response.user['profile_image']
       }
     }, err => console.log(err))
 
+
     this.form = this.formBuilder.group({
       first_name: [null, Validators.required],
       last_name: [null, Validators.required],
+      username: [null, Validators.required],
 
       email: [{value:'',disabled:true}, [Validators.required, Validators.email]],
-      phone: [{value:'',disabled:true}, [Validators.required, Validators.min(5), Validators.max(10)]],
+      phone: [null, [Validators.required, Validators.min(5), Validators.max(10)]],
 
       address: [null, Validators.required],
       address2: [null, Validators.required],
@@ -65,8 +72,10 @@ export class EditComponent implements OnInit {
     let formValue = this.form.getRawValue()
     let formData = new FormData();
 
-    formData.append('pk', this.pk)
+    formData.append('uid', this.uid)
+    formData.append('first_name', formValue['first_name'])
     formData.append('last_name', formValue['last_name'])
+    formData.append('username', formValue['username'])
     formData.append('email', formValue['email'])
     formData.append('phone', formValue['phone'])
     formData.append('address', formValue['address'])
@@ -79,10 +88,12 @@ export class EditComponent implements OnInit {
 
     if (this.profileImage) {
       formData.append('profile_image', this.profileImage, this.profileImage.name)
-    } else {
-      formData.append('profile_image', 'None')
     }
-    this.service.updateUser(formData).subscribe(response => console.log(response), err => console.log(err)
+    this.service.updateUser(formData).subscribe(response => {
+      if (response.success){
+        this.router.navigate(['/user/list-user'])
+      }
+    }, err => console.log(err)
     )
   }
 

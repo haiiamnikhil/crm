@@ -23,6 +23,7 @@ urlpatterns = [
 
     path('user/',include('user_management.urls')),
     path('auth/',include('authentication.urls')),
+    path('entitlements/',include('entitlements.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

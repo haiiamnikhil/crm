@@ -1,0 +1,337 @@
+<div class="row">
+
+    <div class="col-md-3" *ngFor="let user of userDetails">
+        <div class="col-md-3 order-2 mb-4 w-100">
+            <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="card-title m-0 me-2">Profile Details</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="p-0 m-0 lst-cld-spc">
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Username</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0"><span class="text-muted">@</span>{{user.username}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Full Name</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.first_name}} {{user.last_name}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Email</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.email}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Designation</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.designation}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="d-flex pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">DOJ</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.date_joined | date}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 order-2 mb-4 w-100">
+            <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="card-title m-0 me-2">Contact Details</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Phone</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.phone}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Address</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.address}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Address2</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.address2}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">City</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.city}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex mb-4 pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">State</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.state}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Country</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+                                    <h6 class="mb-0">{{user.country}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 order-2 mb-4 w-100">
+            <div class="card h-100">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <h5 class="card-title m-0 me-2">Active Details</h5>
+                </div>
+                <div class="card-body">
+                    <ul class="p-0 m-0">
+                        <li class="d-flex pb-1 mb-4">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Active</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1">
+
+                                    <h6 class="mb-0" class="badge rounded-pill"
+                                        [ngClass]="user.is_active ? 'bg-success' : 'bg-danger'">
+                                        {{user.is_active}}</h6>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="d-flex pb-1">
+                            <!-- <div class="avatar flex-shrink-0 me-3">
+                            <img src="../assets/img/icons/unicons/paypal.png" alt="User" class="rounded">
+                        </div> -->
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <!-- <small class="text-muted d-block mb-1">Full Name</small> -->
+                                    <h6 class="mb-0">Account</h6>
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1" *ngIf="user.is_active">
+
+                                    <a class="mb-0 btn-sm rounded-pill btn-danger"
+                                        routerLink="/user/profile/{{user.uid}}/deactivate/">Deactivate</a>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                                <div class="user-progress d-flex align-items-center gap-1" *ngIf="!user.is_active">
+
+                                    <a class="mb-0 btn-sm rounded-pill btn-success"
+                                        routerLink="/user/profile/{{user.uid}}/activate/">Activate</a>
+                                    <!-- <span class="text-muted">USD</span> -->
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="card-title m-0 me-2">Active Details</h5>
+            </div>
+            <div class="list-group ">
+                <a href="javascript:void(0);"
+                    class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex justify-content-between w-100">
+                        <h6>List group item heading</h6>
+                        <small>3 days ago</small>
+                    </div>
+                    <p class="mb-1">
+                        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                        blandit.
+                    </p>
+                    <small>Donec id elit non mi porta.</small>
+                </a>
+                <a href="javascript:void(0);"
+                    class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex justify-content-between w-100">
+                        <h6>List group item heading</h6>
+                        <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1">
+                        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                        blandit.
+                    </p>
+                    <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+                <a href="javascript:void(0);"
+                    class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex justify-content-between w-100">
+                        <h6>List group item heading</h6>
+                        <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1">
+                        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                        blandit.
+                    </p>
+                    <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="card-title m-0 me-2">User Activity</h5>
+            </div>
+            <div class="list-group bg-white">
+                <a href="javascript:void(0);"
+                    class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <div class="d-flex justify-content-between w-100">
+                        <h6>List group item heading</h6>
+                        <small>3 days ago</small>
+                    </div>
+                    <p class="mb-1">
+                        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                        blandit.
+                    </p>
+                    <small>Donec id elit non mi porta.</small>
+                </a>
+                <a href="javascript:void(0);"
+                    class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex justify-content-between w-100">
+                        <h6>List group item heading</h6>
+                        <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1">
+                        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                        blandit.
+                    </p>
+                    <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+                <a href="javascript:void(0);"
+                    class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex justify-content-between w-100">
+                        <h6>List group item heading</h6>
+                        <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1">
+                        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius
+                        blandit.
+                    </p>
+                    <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

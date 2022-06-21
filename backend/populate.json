@@ -1,0 +1,42 @@
+[
+    {
+        "model": "entitlements.entitlements",
+        "pk": 1,
+        "fields": {
+            "name": "Edit User",
+            "value": "edit_user"
+        }
+    },
+    {
+        "model": "entitlements.entitlements",
+        "pk": 2,
+        "fields": {
+            "name": "View User",
+            "value": "view_user"
+        }
+    },
+    {
+        "model": "entitlements.entitlements",
+        "pk": 3,
+        "fields": {
+            "name": "Edit Entitlement",
+            "value": "edit_entitlement"
+        }
+    },
+    {
+        "model": "entitlements.entitlements",
+        "pk": 4,
+        "fields": {
+            "name": "Add Entitlement",
+            "value": "add_entitlement"
+        }
+    },
+    {
+        "model": "entitlements.entitlements",
+        "pk": 5,
+        "fields": {
+            "name": "Add User",
+            "value": "add_user"
+        }
+    }
+]

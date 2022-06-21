@@ -50,11 +50,11 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'rest_framework_simplejwt',
-    'rest_framework.authtoken',
     'corsheaders',
 
     'user_management',
     'authentication',
+    'entitlements',
 ]
 
 MIDDLEWARE = [
@@ -67,7 +67,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
 
 CORS_ORIGIN_ALLOW_ALL = False
 

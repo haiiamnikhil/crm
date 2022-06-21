@@ -47,9 +47,17 @@
                                 formControlName="email" />
                         </div>
                         <div class="mb-3 col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input class="form-control" type="username" id="username" name="username"
+                                placeholder="john.doe"
+                                formControlName="username" />
+                        </div>
+                        <div class="mb-3 col-md-6">
                             <label for="organization" class="form-label">Designation</label>
-                            <input type="text" class="form-control" id="designation" name="designation"
-                                value="ThemeSelection" formControlName="designation" placeholder="Software Enginer" />
+                            <select name="designations" id="user-designations" class="select2 form-select" formControlName="designation">
+                                <option value="null" disabled>Choose</option>
+                                <option *ngFor="let des of userDesignations" value="{{des.role}}">{{des.role}}</option>
+                            </select>
                         </div>
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="phoneNumber">Phone Number</label>

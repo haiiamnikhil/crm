@@ -1,0 +1,56 @@
+<div class="col-md-12 mb-3">
+    <div class="row">
+        <div class="col-md-8">
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <form [formGroup]="form">
+                        <div class="row">
+                            <div class="mb-3 col-md-12">
+                                <label for="old_password" class="form-label">Old Password</label>
+                                <input class="form-control" type="password" id="old_password" name="old_password" formControlName="oldPassword"
+                                    autofocus
+                                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="newpassword" class="form-label">New Password</label>
+                                <input class="form-control" type="password" id="newpassword" name="newpassword" autofocus formControlName="newPassword"
+                                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label for="confirmpassword" class="form-label">Confirm Password</label>
+                                <input class="form-control" type="password" id="confirmpassword" name="confirmpassword" autofocus formControlName="confirmPassword"
+                                    placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card">
+                <div class="card-header">
+                    <h6 class="text-muted">Password Constraints</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="p-0 m-0">
+                        <li class="d-flex mb-4 pb-1">
+                            <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                <div class="me-2">
+                                    <h6 class="mb-0">Min 6 - 8 Char</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="updatePassword()">Save Password</button>
+</div>

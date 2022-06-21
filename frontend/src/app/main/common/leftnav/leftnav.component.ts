@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftnavComponent implements OnInit {
 
+  viewMode:string = 'dashboard'
   constructor() { }
 
   ngOnInit(): void {

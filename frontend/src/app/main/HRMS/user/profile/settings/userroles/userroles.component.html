@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <h5 class="card-header">Present User Roles</h5>
+            <div class="card-body demo-vertical-spacing demo-only-element" *ngIf="presentUserRoles.length == 0">
+                <!-- <small class="text-light fw-semibold d-block">Added user roles will appear here</small> -->
+                <h6 class="text-muted text-center">No Roles Present</h6>
+            </div>
+            <div class="card-body demo-vertical-spacing demo-only-element scroll-card" *ngIf="presentUserRoles.length > 0">
+                <div class="alert alert-dark alert-dismissible fade show mb-0" role="alert" *ngFor="let role of presentUserRoles; let j = index">
+                    {{role.role}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="removeExistingUserRoles(j)"></button>
+                </div>
+
+            </div>
+        </div>
+        <button class="btn btn-primary" [hidden]="!buttonState" (click)="updatePresentUserRoles()">Save Changes</button>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-3">
+            <h5 class="card-header">Add User Role</h5>
+            <div class="card-body demo-vertical-spacing demo-only-element">
+                <!-- <small class="text-light fw-semibold d-block">Button addons</small> -->
+                <form [formGroup]="form">
+                    <div class="input-group">
+
+                        <input type="text" class="form-control" placeholder="Enter User Role"
+                            aria-label="User Role" aria-describedby="button-addon2" formControlName="role"/>
+                        <button class="btn btn-outline-primary menu-link " type="button" [disabled]="!form.valid"
+                            (click)="addUserRoles()"><i class="menu-icon bx bx-group"></i>Add
+                            Role</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="card mb-3">
+            <h5 class="card-header">Added Roles</h5>
+            <div class="card-body demo-vertical-spacing demo-only-element" *ngIf="userRoles.length == 0">
+                <!-- <small class="text-light fw-semibold d-block">Added user roles will appear here</small> -->
+                <h6 class="text-muted text-center">No Roles added</h6>
+            </div>
+            <div class="card-body demo-vertical-spacing demo-only-element" *ngIf="userRoles.length > 0">
+                <div class="alert alert-dark alert-dismissible mb-0" role="alert" *ngFor="let role of userRoles; let i = index">
+                    {{role | titlecase}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="removeUserRole(i)"></button>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary fade show" [hidden]="userRoles.length == 0" (click)="saveUserRoles()">Add Roles</button>
+    </div>
+</div>

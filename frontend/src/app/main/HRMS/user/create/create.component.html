@@ -46,8 +46,10 @@
                         </div>
                         <div class="mb-3 col-md-6">
                             <label for="organization" class="form-label">Designation</label>
-                            <input type="text" class="form-control" id="designation" name="designation"
-                                value="ThemeSelection" formControlName="designation" placeholder="Software Enginer" />
+                            <select name="designations" id="user-designations" class="select2 form-select" formControlName="designation">
+                                <option value="null" disabled>Choose</option>
+                                <option *ngFor="let des of userDesignations" value="{{des.role}}">{{des.role}}</option>
+                            </select>
                         </div>
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="phoneNumber">Phone Number</label>
@@ -86,7 +88,7 @@
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="country">Country</label>
                             <select id="country" class="select2 form-select" formControlName="country">
-                                <option value="Select Country" selected disabled>Select</option>
+                                <option value="null" selected disabled>Select</option>
                                 <option value="Australia">Australia</option>
                                 <option value="Bangladesh">Bangladesh</option>
                                 <option value="Belarus">Belarus</option>
@@ -123,25 +125,5 @@
             </div>
 
         </div>
-        <!-- <div class="card">
-            <h5 class="card-header">Delete Account</h5>
-            <div class="card-body">
-                <div class="mb-3 col-12 mb-0">
-                    <div class="alert alert-warning">
-                        <h6 class="alert-heading fw-bold mb-1">Are you sure you want to delete your account?</h6>
-                        <p class="mb-0">Once you delete your account, there is no going back. Please be certain.</p>
-                    </div>
-                </div>
-                <form id="formAccountDeactivation" onsubmit="return false">
-                    <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" name="accountActivation"
-                            id="accountActivation" />
-                        <label class="form-check-label" for="accountActivation">I confirm my account
-                            deactivation</label>
-                    </div>
-                    <button type="submit" class="btn btn-danger deactivate-account">Deactivate Account</button>
-                </form>
-            </div>
-        </div> -->
     </div>
 </div>

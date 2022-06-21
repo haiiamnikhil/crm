@@ -8,7 +8,11 @@ import { Observable } from 'rxjs/Observable';
 export class AuthService {
 
   BASE_URL = 'http://127.0.0.1:8000'
-  header = new HttpHeaders({ 'Content-Type': 'application/json' })
+
+  userToken = localStorage.getItem('currentUser')
+  header = new HttpHeaders({"Authorization": "Bearer " + this.userToken,"Content-Type": "application/json"})
+  formHeader = new HttpHeaders({"Authorization": "Bearer " + this.userToken})
+
   public token: any
   public username: any
   public token_expires: any
@@ -39,6 +43,10 @@ export class AuthService {
 
   loginUser(data: any): Observable<any> {
     return this.http.post(this.BASE_URL+'/auth/api/token-auth/', data)
+  }
+
+  updatePassword(data:any){
+    return this.http.post(this.BASE_URL+'/auth/user/change-password/',data, {headers:this.formHeader})
   }
 
   logoutUser():Observable<any>{

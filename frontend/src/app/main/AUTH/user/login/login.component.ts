@@ -11,6 +11,7 @@ import { AuthService } from 'src/app/service/AUTH/auth.service';
 export class LoginComponent implements OnInit {
 
   form:any
+  message:any
 
   constructor(private router:Router, private service:AuthService, private formBuilder:FormBuilder) { 
     this.form = FormData;
@@ -26,14 +27,15 @@ export class LoginComponent implements OnInit {
 
   loginUser(){
     let formValue = this.form.getRawValue()
-    console.log(formValue)
     let formData = new FormData();
     formData.append('username',formValue['email'])
     formData.append('password',formValue['password'])
     this.service.loginUser(formData).subscribe(response => {
-      if(response){
+      if(response.access){
         this.service.updateData(response['access'])
-        this.router.navigate(['user/add-user'])
+        window.location.href = '/user/list-user'
+      }else{
+        this.message = "Please Enter the Credentials Correctly"
       }
     }, err => console.log(err))
   }

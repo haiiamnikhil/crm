@@ -13,6 +13,7 @@ export class CreateComponent implements OnInit {
   isBusy:any;
   imageSrc:any = '../assets/img/profile/default-profile.png';
   profileImage:any;
+  userDesignations:any
 
   constructor(private formBuilder: FormBuilder, private service:UserService) { 
     this.form = FormGroup;
@@ -35,7 +36,11 @@ export class CreateComponent implements OnInit {
       zipcode:[null,Validators.required],
 
       designation:[null,Validators.required],
-      
+    })
+    this.service.getUserRoles().subscribe(response => {
+      if (response.success){
+        this.userDesignations = response.role
+      }
     })
   }
 

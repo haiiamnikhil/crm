@@ -1,0 +1,56 @@
+<div class="card mb-4">
+    <div class="card-header">
+        <h5>User Role Entitlemets</h5>
+    </div>
+    <div class="card-body">
+
+        <div class="col-md">
+            <div class="row">
+                <div class="col-md" *ngFor="let role of userRoles">
+
+                    <div class="card mb-3 pointer" (click)="renderRoleEntitlement(role.role)">
+                        <div class="card-body d-flex justify-content-center align-items-center">
+                            <h5 class="card-title m-0">{{role.role}}</h5>
+                            <!-- <div class="card-subtitle text-muted mb-3">Card subtitle</div>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's
+                                content.
+                            </p>
+                            <a href="javascript:void(0)" class="card-link">Card link</a>
+                            <a href="javascript:void(0)" class="card-link">Another link</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card mb-3">
+    <h5 class="card-header">{{selectedRole}} Entitlements</h5>
+    <div class="table-responsive text-nowrap">
+        <table class="table table-borderless">
+            <thead>
+                <tr>
+                    <th>Entitlements</th>
+                    <th>A/D</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody class="table-border-bottom-0">
+                <tr *ngFor="let ent of userRoleEntitlement">
+                    <ng-template [ngIf]="selectedRole == ent.user_role">
+                        <td>{{ent.entitlement}}</td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="{{ent.id}}" name="checkbox" type="checkbox"
+                                    role="switch" [checked]="ent.status" (change)="changedEntitlements($event)">
+                            </div>
+                        </td>
+                        <td><span class="badge bg-label-primary me-1">Active</span></td>
+                    </ng-template>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<button class="btn btn-primary" [hidden]="changedEnt.length == 0" (click)="updateEntitlement()">Save Changes</button>

@@ -1,0 +1,31 @@
+<div class="col-12 mb-md-0 mb-4">
+    <div class="card mb-3">
+        <h5 class="card-header">Set Entitlements</h5>
+        <div class="table-responsive text-nowrap">
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th width="70%">Name</th>
+                        <th>Status</th>
+
+                    </tr>
+                </thead>
+                <tbody id="checkbox-tbody">
+                    <tr *ngFor="let ent of entitlements">
+                        <td><strong>{{ent.name}}</strong></td>
+                        <td>
+                            <div class="form-check form-switch">
+                                <input class="form-check-input" id="{{ent.id}}" name="checkbox" type="checkbox"
+                                    role="switch" (change)="getChangedValue($event)">
+                            </div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="switchAllButtons($event)">
+        Save Changes
+    </button>
+</div>

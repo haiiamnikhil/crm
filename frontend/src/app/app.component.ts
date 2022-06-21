@@ -10,7 +10,6 @@ import { UserService } from './service/HRMS/user.service';
 export class AppComponent implements OnInit{
   title = 'frontend';
 
-
   constructor(public router:Router, private service:UserService){
     if (localStorage.getItem('currentUser')){
       this.service.presentUser().subscribe(response => {

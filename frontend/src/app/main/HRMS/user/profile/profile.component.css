@@ -1,0 +1,15 @@
+ul.lst-cld-spc:last-child{
+    margin: 2rem;
+}
+
+.badge{
+    margin: 0 !important;
+}
+
+.btn-danger:hover{
+    transform: none;
+}
+
+.btn-danger{
+    border: none;
+}

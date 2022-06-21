@@ -1,2 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
-@import url(https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap)
+@import url(https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap);
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #696cff;
+}
+
+
+.card.active {
+  background-color: #696cff;
+  color: #fff;
+  box-shadow: 0 2px 4px 0 rgb(105 108 255 / 40%)
+}
+
+.pointer{
+  cursor: pointer;
+}
